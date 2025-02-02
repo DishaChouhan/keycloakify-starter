@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .kcFormClass {
+    @apply w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md;
+  }
+
+  .kcInputClass {
+    @apply w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  .kcLabelClass {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .kcButtonClass {
+    @apply w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors;
+  }
+
+  .kcFormSocialAccountSectionClass {
+    @apply mt-6 border-t border-gray-200 pt-6;
+  }
+
+  .kcFormSocialAccountListClass {
+    @apply mt-4 space-y-3;
+  }
+
+  .kcFormSocialAccountListButtonClass {
+    @apply flex items-center justify-center w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50;
+  }
+
+  .kcInputErrorMessageClass {
+    @apply mt-2 text-sm text-red-600;
+  }
+
+  .kcInputGroup {
+    @apply relative;
+  }
+
+  .kcFormPasswordVisibilityButtonClass {
+    @apply absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-500;
+  }
+
+  .kcFormPasswordVisibilityIconShow {
+    @apply h-5 w-5;
+  }
+
+  .kcFormPasswordVisibilityIconHide {
+    @apply h-5 w-5;
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "themes": [
+        {
+            "name": "my-app-1",
+            "type": "login",
+            "properties": {}
+        },
+        {
+            "name": "my-app-2",
+            "type": "login",
+            "properties": {}
+        }
+    ]
+}

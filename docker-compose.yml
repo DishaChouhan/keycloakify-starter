@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+    keycloak:
+        container_name: keycloak
+        image: quay.io/keycloak/keycloak:latest
+        command: ["start", "--import-realm", "--verbose"]
+        environment:
+            JAVA_OPTS_APPEND: "-Dkeycloak.profile.feature.upload_scripts=enabled -XX:UseSVE=0"
+            KC_DB: postgres
+            KC_DB_PASSWORD: postgres
+            KC_DB_URL: jdbc:postgresql://KeycloakDB:5432/keycloak
+            KC_DB_USERNAME: postgres
+            KC_HTTP_ENABLED: "true"
+            KC_HOSTNAME: http://localhost:8180
+            KC_BOOTSTRAP_ADMIN_USERNAME: test
+            KC_BOOTSTRAP_ADMIN_PASSWORD: test
+        ports:
+            - "8180:8080"
+            - "8787:8787" # debug port
+        volumes:
+            - ./.keycloakify:/opt/keycloak/data/import:ro
+            - ./dist_keycloak/theme:/opt/keycloak/themes/custom:ro
+        depends_on:
+            - KeycloakDB
+        networks:
+            - local
+
+    KeycloakDB:
+        container_name: keycloak_db
+        image: postgres:15
+        environment:
+            POSTGRES_DB: keycloak
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        ports:
+            - "5432:5432"
+        networks:
+            - local
+        volumes:
+            - keycloak_postgres_data:/var/lib/postgresql/data
+
+networks:
+    local:
+        driver: bridge
+
+volumes:
+    keycloak_postgres_data:
+        driver: local
