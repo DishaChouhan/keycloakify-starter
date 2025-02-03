@@ -16,14 +16,13 @@ export const Default: Story = {
     render: () => <KcPageStory />
 };
 
-export const Variant: Story = {
-    render: () => <KcPageStory
-        kcContext={{
-            themeName: "my-app-2"
-        }}
-
-     />
-}
+// export const Variant: Story = {
+//     render: () => <KcPageStory
+//         kcContext={{
+//             themeName: "my-app-2"
+//         }}
+//      />
+// }
 
 export const WithInvalidCredential: Story = {
     render: () => (

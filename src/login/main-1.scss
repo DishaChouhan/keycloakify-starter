@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Hide unnecessary elements
+.kcLocaleDropDownClass,
+.kcHeaderClass,
+.kcSignUpClass,
+.kcFormGroupClass.kcFormSettingClass {
+  @apply hidden;
+}
+
+// Main login container
+.kcLoginClass {
+  @apply min-h-screen flex items-center justify-center bg-gray-50;
+}
+
+// Form card
+.kcFormCardClass {
+  @apply bg-white px-8 py-12 rounded-2xl shadow-md w-full max-w-md mx-4;
+}
+
+// Form header
+.kcFormHeaderClass {
+  @apply mb-6 text-2xl text-gray-700 text-center;
+
+  &::before {
+    content: '';
+    @apply block w-auto h-12 mx-auto my-2 bg-[url('./pages/img/zignex_logo_tag.JPG')] bg-contain bg-no-repeat bg-center;
+  }
+}
+
+// Form title
+.kcFormHeaderMainClass {
+  @apply text-2xl font-semibold text-gray-800;
+}
+
+// Form group
+.kcFormGroupClass {
+  @apply mb-4;
+}
+
+// Form labels
+.kcLabelClass {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+// Form inputs
+.kcInputClass {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+// Submit button
+.kcButtonClass {
+  @apply w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors;
+}
+
+// Info text
+.kcInfoText {
+  @apply text-sm text-gray-600 mt-2;
+}
+
+// Error messages
+.kcInputErrorMessageClass,
+.kcAlertTitleClass {
+  @apply text-red-600 text-sm mt-1;
+}
+
+// Remember me checkbox
+.kcRememberMeLabel {
+  @apply flex items-center space-x-2 text-sm text-gray-600;
+}
+
+// Social providers
+.kcFormSocialAccountContentClass {
+  @apply mt-6;
+}
+
+.kcFormSocialAccountListClass {
+  @apply space-y-3;
+}
+
+.kcFormSocialAccountButtonClass {
+  @apply w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50;
+}

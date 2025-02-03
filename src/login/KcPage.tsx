@@ -22,14 +22,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
-                    // case "login.ftl":
-                    //     return (
-                    //         <Login
-                    //             {...{ kcContext, i18n, classes }}
-                    //             Template={Template}
-                    //             doUseDefaultCss={false}
-                    //         />
-                    //     );
+                    case "login.ftl":
+                        return (
+                            <Login
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={false}
+                            />
+                        );
                     default:
                         return (
                             <DefaultPage

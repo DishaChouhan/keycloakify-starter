@@ -5,7 +5,7 @@ export function useCustomCss(kcContext: KcContext) {
     useMemo(() => {
         switch (kcContext.themeName) {
             case "my-app-1":
-                import("./main-1.css");
+                import("./main-1.scss");
                 break;
             case "my-app-2":
                 import("./main-2.css");
